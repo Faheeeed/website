@@ -41,7 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.4rem 4rem;
+    padding: 1rem 4rem;
     background: rgba(10,10,10,0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(200,169,110,0.15);
@@ -83,7 +83,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 8rem 4rem 4rem 4rem;
+    padding: 6rem 3rem 3rem 4rem;
     position: relative;
     z-index: 2;
   }
@@ -94,7 +94,7 @@
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.3s;
   }
@@ -120,21 +120,21 @@
     width: 60px;
     height: 2px;
     background: var(--gold);
-    margin: 2rem 0;
+    margin: 1.2rem 0;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.7s;
   }
   .hero-tagline {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 1.7;
+    line-height: 1.6;
     color: var(--silver);
     max-width: 420px;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.9s;
   }
   .hero-cta {
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -147,7 +147,7 @@
     font-size: 0.88rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    padding: 1rem 2.2rem;
+    padding: 0.85rem 2rem;
     background: var(--gold);
     color: var(--black);
     border: none;
@@ -198,8 +198,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 340px;
-    height: 420px;
+    width: 300px;
+    height: 370px;
     border: 1px solid rgba(200,169,110,0.2);
     opacity: 0;
     animation: fadeIn 1.2s ease forwards 1s;
@@ -263,14 +263,14 @@
     width: 40px;
     height: 1px;
     background: var(--gold-dim);
-    margin: 0.8rem auto;
+    margin: 0.6rem auto;
   }
 
   /* MARQUEE STRIP */
   .marquee-strip {
     background: var(--gold);
     overflow: hidden;
-    padding: 0.8rem 0;
+    padding: 0.65rem 0;
     position: relative;
   }
   .marquee-track {
@@ -294,7 +294,7 @@
   }
 
   /* SECTION SHARED */
-  section { padding: 7rem 4rem; }
+  section { padding: 4rem 4rem; }
   .section-label {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 400;
@@ -302,12 +302,12 @@
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.8rem;
   }
   .section-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     text-transform: uppercase;
     line-height: 0.95;
     letter-spacing: -0.01em;
@@ -318,7 +318,7 @@
     background: var(--off-black);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 4rem;
     align-items: center;
     border-top: 1px solid var(--iron);
   }
@@ -326,36 +326,36 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2px;
-    margin-top: 3rem;
+    margin-top: 1.8rem;
   }
   .stat-block {
     background: var(--charcoal);
-    padding: 2rem;
+    padding: 1.4rem 1.6rem;
   }
   .stat-number {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: 3rem;
+    font-size: 2.4rem;
     color: var(--gold);
     line-height: 1;
   }
   .stat-desc {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--ash);
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
     letter-spacing: 0.05em;
   }
   .about-text {
-    font-size: 1rem;
-    line-height: 1.85;
+    font-size: 0.95rem;
+    line-height: 1.75;
     color: var(--silver);
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
   }
   .about-location {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    margin-top: 2rem;
+    margin-top: 1.4rem;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.85rem;
     letter-spacing: 0.15em;
@@ -407,86 +407,10 @@
     text-transform: uppercase;
   }
 
-  /* SERVICES */
-  .services {
-    background: var(--black);
-    border-top: 1px solid var(--iron);
-  }
-  .services-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 4rem;
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-  .service-card {
-    background: var(--off-black);
-    padding: 3rem 2.5rem;
-    border-top: 3px solid transparent;
-    transition: border-color 0.3s, background 0.3s;
-    cursor: default;
-    position: relative;
-    overflow: hidden;
-  }
-  .service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 0;
-    background: rgba(200,169,110,0.04);
-    transition: height 0.4s ease;
-  }
-  .service-card:hover { border-color: var(--gold); background: #141414; }
-  .service-card:hover::after { height: 100%; }
-  .service-number {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 300;
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    color: var(--gold-dim);
-    margin-bottom: 2rem;
-  }
-  .service-icon {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  .service-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--white);
-    margin-bottom: 1rem;
-    line-height: 1.1;
-  }
-  .service-desc {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    color: var(--ash);
-  }
-  .service-arrow {
-    margin-top: 2rem;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.2s, gap 0.2s;
-  }
-  .service-card:hover .service-arrow { color: var(--gold); gap: 0.8rem; }
-
   /* FREE CALL BANNER */
   .free-call {
     background: var(--gold);
-    padding: 5rem 4rem;
+    padding: 3.5rem 4rem;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -499,19 +423,19 @@
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: rgba(0,0,0,0.5);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
   }
   .free-call-text h2 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.5rem);
     text-transform: uppercase;
     line-height: 0.95;
     color: var(--black);
   }
   .free-call-text p {
-    margin-top: 1rem;
-    font-size: 1rem;
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
     color: rgba(0,0,0,0.6);
     max-width: 460px;
     line-height: 1.6;
@@ -522,7 +446,7 @@
     font-size: 0.88rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    padding: 1.2rem 2.8rem;
+    padding: 1rem 2.4rem;
     background: var(--black);
     color: var(--gold);
     border: none;
@@ -534,165 +458,11 @@
   }
   .btn-dark:hover { background: #222; }
 
-  /* PROCESS / METHODOLOGY */
-  .methodology {
-    background: var(--off-black);
-    border-top: 1px solid var(--iron);
-  }
-  .methodology-body {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 6rem;
-    margin-top: 4rem;
-  }
-  .method-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .method-step {
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--iron);
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-  .step-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 300;
-    font-size: 2.5rem;
-    color: rgba(200,169,110,0.25);
-    line-height: 1;
-    min-width: 2rem;
-  }
-  .step-content h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-  }
-  .step-content p {
-    font-size: 0.88rem;
-    line-height: 1.7;
-    color: var(--ash);
-  }
-  .methodology-callout {
-    background: var(--charcoal);
-    padding: 3.5rem;
-    border-left: 3px solid var(--gold);
-    align-self: start;
-  }
-  .methodology-callout blockquote {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 300;
-    font-size: 2rem;
-    line-height: 1.3;
-    color: var(--white);
-    margin-bottom: 2rem;
-  }
-  .methodology-callout cite {
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-style: normal;
-  }
-
-  /* LOCATION */
-  .location-section {
-    background: var(--black);
-    border-top: 1px solid var(--iron);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 0;
-  }
-  .location-text {
-    padding: 7rem 4rem;
-  }
-  .location-visual {
-    background: var(--charcoal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    position: relative;
-    overflow: hidden;
-    border-left: 1px solid var(--iron);
-  }
-  .location-map-art {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .map-circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 1px solid rgba(200,169,110,0.2);
-    position: absolute;
-    animation: pulse 3s ease-in-out infinite;
-  }
-  .map-circle:nth-child(1) { width: 80px; height: 80px; border-color: rgba(200,169,110,0.6); animation-delay: 0s; }
-  .map-circle:nth-child(2) { width: 150px; height: 150px; border-color: rgba(200,169,110,0.3); animation-delay: 0.5s; }
-  .map-circle:nth-child(3) { width: 240px; height: 240px; animation-delay: 1s; }
-  .map-circle:nth-child(4) { width: 340px; height: 340px; border-color: rgba(200,169,110,0.08); animation-delay: 1.5s; }
-  .map-pin {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-  }
-  .pin-dot {
-    width: 12px; height: 12px;
-    background: var(--gold);
-    border-radius: 50%;
-    margin: 0 auto 0.5rem;
-    box-shadow: 0 0 20px rgba(200,169,110,0.6);
-  }
-  .pin-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .location-details {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .location-detail {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-  .detail-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-    min-width: 80px;
-    padding-top: 2px;
-  }
-  .detail-value {
-    font-size: 0.95rem;
-    color: var(--silver);
-    line-height: 1.5;
-  }
-
   /* FOOTER */
   footer {
     background: var(--off-black);
     border-top: 1px solid var(--iron);
-    padding: 3rem 4rem;
+    padding: 2rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -738,19 +508,14 @@
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    nav { padding: 1.2rem 2rem; }
+    nav { padding: 1rem 2rem; }
     .nav-links { gap: 1.5rem; }
     .hero { grid-template-columns: 1fr; }
-    .hero-right { min-height: 300px; }
-    .hero-left { padding: 7rem 2rem 3rem; }
-    section { padding: 5rem 2rem; }
-    .about { grid-template-columns: 1fr; gap: 3rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .free-call { grid-template-columns: 1fr; gap: 2rem; }
-    .methodology-body { grid-template-columns: 1fr; gap: 3rem; }
-    .location-section { grid-template-columns: 1fr; }
-    .location-text { padding: 5rem 2rem; }
+    .hero-right { min-height: 260px; }
+    .hero-left { padding: 6rem 2rem 2.5rem; }
+    section { padding: 3rem 2rem; }
+    .about { grid-template-columns: 1fr; gap: 2rem; }
+    .free-call { grid-template-columns: 1fr; gap: 1.5rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
   }
 </style>
@@ -764,7 +529,7 @@
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="instagram.html">Instagram</a></li>
-   <li><a href="ai-policy.html">AI Policy</a></li>
+    <li><a href="ai-policy.html">AI Policy</a></li>
   </ul>
 </nav>
 
@@ -778,7 +543,6 @@
     </h1>
     <div class="hero-divider"></div>
     <p class="hero-tagline">Precision training built around you. Evidence-based programming, real results, and a coach who's invested in your performance from day one.</p>
-
   </div>
   <div class="hero-right">
     <div class="hero-bg-pattern"></div>
@@ -816,7 +580,7 @@
       </div>
       <div class="stat-block">
         <div class="stat-number">Free</div>
-        <div class="stat-desc">First Phone Call</div>
+        <div class="stat-desc">First Consultation</div>
       </div>
     </div>
     <div class="about-location">
@@ -824,43 +588,20 @@
       Based in Alexandria, Virginia
     </div>
   </div>
-
+  <div>
     <p class="about-text">As a Certified Strength and Conditioning Specialist through the NSCA, I bring rigorous, evidence-based methods to every client I work with. My passion isn't just fitness — it's helping you discover what you're truly capable of. Whether you're chasing a performance goal or building a stronger foundation, every program I write is designed with your specific body, history, and ambitions in mind.</p>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="services-header">
-    <div>
-      <p class="section-label">What I Offer</p>
-      <h2 class="section-title">Three Ways<br>to Train with Me</h2>
-    </div>
+<!-- FREE CALL BANNER -->
+<div class="free-call">
+  <div class="free-call-text">
+    <div class="eyebrow">No Commitment Required</div>
+    <h2>Start with a<br>Free Consultation</h2>
+    <p>One hour, no pressure. We talk through your goals, your history, and figure out together what the right path forward looks like.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-number">01</div>
-      <div class="service-icon">🏋️</div>
-      <h3 class="service-name">1:1 Personal<br>Training</h3>
-      <p class="service-desc">Hands-on coaching with your full attention. Every session is structured, purposeful, and adapted in real time based on how you're moving and performing that day. No guesswork — just focused work with a coach who's fully present.</p>
-      <div class="service-arrow">Learn More →</div>
-    </div>
-    <div class="service-card">
-      <div class="service-number">02</div>
-      <div class="service-icon">📋</div>
-      <h3 class="service-name">Custom S&amp;C<br>Plans</h3>
-      <p class="service-desc">Not a template. Not a cookie-cutter program. Your custom strength and conditioning plan is built from scratch around your goals, training history, schedule, and equipment — then refined over time as you progress.</p>
-      <div class="service-arrow">Learn More →</div>
-    </div>
-    <div class="service-card">
-      <div class="service-number">03</div>
-      <div class="service-icon">📊</div>
-      <h3 class="service-name">Accurate &amp;<br>Reliable Testing</h3>
-      <p class="service-desc">Know exactly where you stand. I conduct precise performance and fitness assessments using validated protocols — giving you a clear, honest baseline so your progress can be tracked with real data, not guesses.</p>
-      <div class="service-arrow">Learn More →</div>
-    </div>
-  </div>
-</section>
+  <a href="contact.html" class="btn-dark">Book Your Free Hour</a>
+</div>
 
 <!-- FOOTER -->
 <footer>
