@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Policy | Human-First Coaching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0d0d0d;
+      --white: #f5f2ec;
+      --accent: #c8392b;
+      --mid: #2a2a2a;
+      --rule: #3a3a3a;
+    }
 
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 3rem 2rem 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.25em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    .effective-date {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: #888;
+      text-transform: uppercase;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    /* ── COMMITMENT BANNER ── */
+    .commitment-banner {
+      border-left: 4px solid var(--accent);
+      background: var(--mid);
+      padding: 2rem 2.5rem;
+      margin-bottom: 4rem;
+      animation: fadeUp 0.9s 0.2s ease both;
+    }
+
+    .commitment-banner p {
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--white);
+    }
+
+    .commitment-banner p strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      margin-bottom: 3.5rem;
+      animation: fadeUp 1s 0.35s ease both;
+    }
+
+    section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    section p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    /* ── TWO-COLUMN GRID ── */
+    .policy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      animation: fadeUp 1s 0.45s ease both;
+    }
+
+    @media (max-width: 600px) {
+      .policy-grid { grid-template-columns: 1fr; }
+    }
+
+    .policy-card {
+      padding: 1.75rem;
+      border: 1px solid var(--rule);
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .policy-card:hover {
+      border-color: var(--accent);
+    }
+
+    .policy-card .card-label {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .policy-card.no-ai .card-label { color: var(--accent); }
+    .policy-card.yes-ai .card-label { color: #888; }
+
+    .policy-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+
+    .policy-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .policy-card ul li {
+      font-size: 0.9rem;
+      color: #bbb;
+      padding: 0.3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .policy-card ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #555;
+    }
+
+    .policy-card.no-ai ul li::before { color: var(--accent); }
+
+    /* ── PLEDGE ── */
+    .pledge {
+      background: var(--mid);
+      border: 1px solid var(--rule);
+      padding: 3rem 2.5rem;
+      margin-top: 4rem;
+      text-align: center;
+      animation: fadeUp 1s 0.6s ease both;
+    }
+
+    .pledge .pledge-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .pledge h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .pledge p {
+      font-size: 1rem;
+      color: #bbb;
+      max-width: 580px;
+      margin: 0 auto 1rem;
+      line-height: 1.8;
+    }
+
+    .pledge-line {
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      margin: 2rem auto;
+    }
+
+    .pledge-signature {
+      font-style: italic;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-size: 0.75rem;
+      color: #555;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="eyebrow">Official Statement &nbsp;/&nbsp; Effective 2025</p>
+    <h1>Our <span>AI</span><br>Policy</h1>
+    <p class="effective-date">Last updated: March 2025</p>
+  </header>
+
+  <main>
+
+    <!-- Commitment Banner -->
+    <div class="commitment-banner">
+      <p>
+        We believe that <strong>human expertise cannot be automated</strong>. Every training program we write, every fitness assessment we conduct, and every coaching decision we make is guided by a real human professional — not an algorithm.
+      </p>
+    </div>
+
+    <!-- Overview -->
+    <section>
+      <h2>Our Position</h2>
+      <p>
+        Artificial intelligence is a powerful tool, and we don't shy away from using it where it makes sense. But when it comes to your health, your performance, and your results — we draw a clear line. Strength training and program design require nuanced human judgment that AI cannot replicate.
+      </p>
+      <p>
+        This policy outlines exactly where we use AI, and where we never will.
+      </p>
+    </section>
+
+    <!-- Two-column policy grid -->
+    <div class="policy-grid">
+
+      <div class="policy-card no-ai">
+        <span class="card-label">❌ AI is never used for</span>
+        <h3>Coaching & Programming</h3>
+        <ul>
+          <li>Strength & conditioning program design</li>
+          <li>Training load and periodization decisions</li>
+          <li>Fitness testing and performance assessment</li>
+          <li>Movement analysis and technique feedback</li>
+          <li>Injury risk screening and modification</li>
+          <li>Individual athlete interpretation and coaching</li>
+          <li>Progress tracking and program adjustments</li>
+        </ul>
+      </div>
+
+      <div class="policy-card yes-ai">
+        <span class="card-label">✓ AI may be used for</span>
+        <h3>Operations & Admin</h3>
+        <ul>
+          <li>Marketing copy and social media content</li>
+          <li>Website design and development</li>
+          <li>Scheduling and administrative tasks</li>
+          <li>Email drafting and communications</li>
+          <li>Graphic design and visual assets</li>
+          <li>Research summaries and background reading</li>
+          <li>Business operations support</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Human-First Pledge -->
+    <div class="pledge">
+      <div class="pledge-icon">🤝</div>
+      <h2>Our Human-First Commitment</h2>
+      <p>
+        We formally commit that all program design, fitness testing, and athletic programming will always be created, reviewed, and delivered by qualified human coaches and professionals.
+      </p>
+      <p>
+        No training plan will ever be generated or modified by an AI system without full human authorship and oversight. When you work with us, you work with a person — someone who understands your goals, your body, and your journey.
+      </p>
+      <div class="pledge-line"></div>
+      <p class="pledge-signature">
+        This commitment is made to every client, athlete, and partner we serve.
+      </p>
+    </div>
+
+    <!-- Questions -->
+    <section style="margin-top: 3.5rem;">
+      <h2>Questions?</h2>
+      <p>
+        If you have any questions about how we use technology in our practice, or want to learn more about our coaching philosophy, please don't hesitate to reach out. We're an open book.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Company Name. All rights reserved. &nbsp;|&nbsp; AI Policy</p>
+  </footer>
+
+</body>
+</html>
