@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faheed's S&C — Certified Strength & Conditioning</title>
+<title>Faheed's Strength & Conditioning — Certified Strength & Conditioning</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.6rem 4rem;
+    padding: 1rem 4rem;
     background: rgba(247,244,239,0.95);
     backdrop-filter: blur(12px);
   }
@@ -51,6 +51,9 @@
     letter-spacing: 0.18em;
     color: var(--ink);
     text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .nav-links {
@@ -74,11 +77,11 @@
 
   /* ─── HERO ─── */
   .hero {
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 4rem 3.5rem;
+    padding: 6rem 4rem 2.5rem;
     position: relative;
   }
 
@@ -89,7 +92,7 @@
     letter-spacing: 0.38em;
     text-transform: uppercase;
     color: var(--stone);
-    margin-bottom: 1.4rem;
+    margin-bottom: 0.8rem;
     opacity: 0;
     animation: rise 0.9s ease forwards 0.3s;
   }
@@ -97,7 +100,7 @@
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: clamp(4rem, 9vw, 9rem);
+    font-size: clamp(3.2rem, 7vw, 7rem);
     line-height: 0.9;
     letter-spacing: -0.01em;
     color: var(--ink);
@@ -114,7 +117,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     opacity: 0;
     animation: rise 0.9s ease forwards 0.8s;
   }
@@ -167,237 +170,10 @@
 
   .btn-ghost:hover { color: var(--ink); }
 
-  /* thin ruled line across full width */
-  .rule {
-    width: 100%;
-    height: 1px;
-    background: var(--parchment);
-  }
-
-  /* ─── MARQUEE ─── */
-  .marquee-strip {
-    overflow: hidden;
-    padding: 1rem 0;
-    border-top: 1px solid var(--parchment);
-    border-bottom: 1px solid var(--parchment);
-  }
-
-  .marquee-track {
-    display: flex;
-    animation: marquee 32s linear infinite;
-    white-space: nowrap;
-  }
-
-  .marquee-item {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.65rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--warm-mid);
-    padding: 0 2.8rem;
-  }
-
-  .marquee-sep {
-    color: var(--parchment);
-  }
-
-  /* ─── ABOUT ─── */
-  .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid var(--parchment);
-  }
-
-  .about-left {
-    padding: 3.5rem 4rem;
-    border-right: 1px solid var(--parchment);
-  }
-
-  .about-right {
-    padding: 3.5rem 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  .section-label {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.65rem;
-    letter-spacing: 0.42em;
-    text-transform: uppercase;
-    color: var(--stone);
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(2.2rem, 4vw, 3.6rem);
-    line-height: 1.05;
-    color: var(--ink);
-  }
-
-  .section-title em {
-    font-style: italic;
-    color: var(--bark);
-  }
-
-  .about-text {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.9rem;
-    line-height: 1.95;
-    color: var(--bark);
-    margin-top: 1.4rem;
-    max-width: 440px;
-    letter-spacing: 0.03em;
-  }
-
-  .about-location {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    margin-top: 1.4rem;
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.68rem;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--stone);
-  }
-
-  .loc-line {
-    width: 20px;
-    height: 1px;
-    background: var(--warm-mid);
-  }
-
-  /* Stats — quiet, no boxes */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.8rem 2rem;
-  }
-
-  .stat-cell {}
-
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: 2.6rem;
-    line-height: 1;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-
-  .stat-label {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--stone);
-    margin-top: 0.5rem;
-    line-height: 1.5;
-  }
-
-  .about-quote {
-    border-left: 1px solid var(--warm-mid);
-    padding-left: 1.6rem;
-  }
-
-  .about-quote p {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 1.2rem;
-    line-height: 1.65;
-    color: var(--bark);
-  }
-
-  .about-quote cite {
-    display: block;
-    font-family: 'Jost', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 0.65rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--stone);
-    margin-top: 1rem;
-  }
-
-  /* ─── SERVICES ─── */
-  .services {
-    border-top: 1px solid var(--parchment);
-    padding: 3.5rem 4rem;
-  }
-
-  .services-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-    padding-bottom: 1.4rem;
-    border-bottom: 1px solid var(--parchment);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-left: 1px solid var(--parchment);
-  }
-
-  .service-card {
-    padding: 2rem 2rem;
-    border-right: 1px solid var(--parchment);
-    border-bottom: 1px solid var(--parchment);
-  }
-
-  .service-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: 1.1rem;
-    color: var(--warm-mid);
-    margin-bottom: 1rem;
-    letter-spacing: 0.08em;
-  }
-
-  .service-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: var(--ink);
-    margin-bottom: 1rem;
-  }
-
-  .service-desc {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.85rem;
-    line-height: 1.85;
-    color: var(--bark);
-    letter-spacing: 0.02em;
-  }
-
-  .service-tag {
-    display: inline-block;
-    margin-top: 1rem;
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.62rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--stone);
-  }
-
   /* ─── CTA BANNER ─── */
   .cta-banner {
     background: var(--ink);
-    padding: 3.5rem 4rem;
+    padding: 2.2rem 4rem;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -411,13 +187,13 @@
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: var(--stone);
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.6rem;
   }
 
   .cta-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
     line-height: 1;
     color: var(--cream);
     letter-spacing: -0.01em;
@@ -433,9 +209,9 @@
     font-weight: 300;
     font-size: 0.88rem;
     color: var(--stone);
-    margin-top: 1.2rem;
+    margin-top: 0.6rem;
     max-width: 400px;
-    line-height: 1.8;
+    line-height: 1.6;
     letter-spacing: 0.03em;
   }
 
@@ -462,7 +238,7 @@
   footer {
     background: var(--cream);
     border-top: 1px solid var(--parchment);
-    padding: 2rem 4rem;
+    padding: 1.2rem 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
@@ -496,15 +272,74 @@
     text-align: right;
   }
 
+  /* ─── PHILOSOPHY ─── */
+  .philosophy {
+    border-top: 1px solid var(--parchment);
+    padding: 2.2rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .philosophy-left .section-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.65rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 0.6rem;
+  }
+
+  .philosophy-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.05;
+    color: var(--ink);
+  }
+
+  .philosophy-heading em {
+    font-style: italic;
+    color: var(--bark);
+  }
+
+  .philosophy-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding-top: 0;
+  }
+
+  .philosophy-block {
+    border-top: 1px solid var(--parchment);
+    padding-top: 1rem;
+  }
+
+  .philosophy-block-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 0.4rem;
+  }
+
+  .philosophy-block p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--bark);
+    letter-spacing: 0.03em;
+  }
+
   /* ─── KEYFRAMES ─── */
   @keyframes rise {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
   }
 
   /* ─── RESPONSIVE ─── */
@@ -512,25 +347,14 @@
     nav { padding: 1.2rem 1.8rem; }
     .nav-links { gap: 1.4rem; }
 
-    .hero { padding: 0 1.8rem 4rem; }
+    .hero { padding: 5rem 1.8rem 2rem; }
 
     .hero-bottom { flex-direction: column; align-items: flex-start; gap: 2rem; }
     .hero-cta { align-items: flex-start; }
 
-    .about { grid-template-columns: 1fr; }
-    .about-left {
-      border-right: none;
-      border-bottom: 1px solid var(--parchment);
-      padding: 2.5rem 1.8rem;
-    }
-    .about-right { padding: 2.5rem 1.8rem; }
+    .philosophy { grid-template-columns: 1fr; padding: 1.8rem 1.8rem; gap: 1.4rem; }
 
-    .services { padding: 2.5rem 1.8rem; }
-    .services-header { flex-direction: column; gap: 1.2rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .service-card { border-right: none; }
-
-    .cta-banner { grid-template-columns: 1fr; padding: 2.5rem 1.8rem; gap: 2rem; }
+    .cta-banner { grid-template-columns: 1fr; padding: 1.8rem 1.8rem; gap: 1.4rem; }
 
     footer { grid-template-columns: 1fr; gap: 0.7rem; text-align: center; padding: 1.5rem 1.8rem; }
     .footer-nsca { text-align: center; }
@@ -541,7 +365,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Faheed's S&C</div>
+  <div class="nav-logo">Faheed's Strength & Conditioning</div>
   <ul class="nav-links">
     <li><a href="testimonials.html">Testimonials</a></li>
     <li><a href="pricing.html">Pricing</a></li>
@@ -563,95 +387,24 @@
     <p class="hero-tagline">Individual programming. No templates. A coach who actually knows your training.</p>
     <div class="hero-cta">
       <a href="contact.html" class="btn-primary">Book a Free Hour</a>
-      <a href="#about" class="btn-ghost">Learn more ↓</a>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-strip">
-  <div class="marquee-track">
-    <span class="marquee-item">NSCA Certified</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Evidence-Based Training</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Alexandria, Virginia</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Individualized Programming</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Certified Strength &amp; Conditioning Specialist</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Free First Consultation</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Performance &amp; Conditioning</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">NSCA Certified</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Evidence-Based Training</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Alexandria, Virginia</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Individualized Programming</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Certified Strength &amp; Conditioning Specialist</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Free First Consultation</span><span class="marquee-sep"> · </span>
-    <span class="marquee-item">Performance &amp; Conditioning</span><span class="marquee-sep"> · </span>
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-left">
+    <p class="section-label">The Approach</p>
+    <h2 class="philosophy-heading">Built for you.<br><em>Designed to transfer.</em></h2>
   </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-left">
-    <p class="section-label">About</p>
-    <h2 class="section-title">Research-based.<br><em>Built for you.</em></h2>
-    <p class="about-text">I hold a CSCS certification through the NSCA. Every program I write starts with your history, your body, and what you're actually trying to do — not a preset structure I fill in around you.</p>
-    <div class="about-location">
-      <div class="loc-line"></div>
-      Based in Alexandria, Virginia
+  <div class="philosophy-right">
+    <div class="philosophy-block">
+      <div class="philosophy-block-label">Individual Programming</div>
+      <p>Every program is constructed from the ground up around your body, your history, and your goals — not adapted from a template. What you get is a plan that fits you precisely, because it was written for no one else.</p>
     </div>
-  </div>
-  <div class="about-right">
-    <div class="stats-grid">
-      <div class="stat-cell">
-        <div class="stat-num" style="font-size: 1.15rem; line-height: 1.3;">Certified Strength &amp;<br>Conditioning Specialist</div>
-        <div class="stat-label">NSCA Certified</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Individualized<br>Programs</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">1:1</div>
-        <div class="stat-label">Personal<br>Attention</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">Free</div>
-        <div class="stat-label">First<br>Consultation</div>
-      </div>
-    </div>
-    <div class="about-quote">
-      <p>"Every program starts with your history, your body, and what you're actually trying to do."</p>
-      <cite>— Faheed, CSCS</cite>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="services-header">
-    <div>
-      <p class="section-label">Services</p>
-      <h2 class="section-title">What's<br>Included</h2>
-    </div>
-    <a href="pricing.html" class="btn-ghost" style="margin-top: 0.4rem;">View Pricing ↗</a>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-title">Program Design</div>
-      <p class="service-desc">Programs built from scratch. Periodized and progressive, adjusted as you go.</p>
-      <span class="service-tag">Custom Programming</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-title">Performance Coaching</div>
-      <p class="service-desc">Coaching on technique, movement, and recovery. One client at a time.</p>
-      <span class="service-tag">1:1 Coaching</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-title">Free Consultation</div>
-      <p class="service-desc">One hour to talk through your goals and training history. No sales, no obligation.</p>
-      <span class="service-tag">No Commitment</span>
+    <div class="philosophy-block">
+      <div class="philosophy-block-label">Sport-Specific Training</div>
+      <p>For athletes, the gym is a means to an end. Programming is built with your sport in mind — movement patterns, energy demands, and periodization aligned so that every session translates directly to performance where it counts.</p>
     </div>
   </div>
 </section>
@@ -668,7 +421,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Faheed's S&C</div>
+  <div class="footer-logo">Faheed's Strength & Conditioning</div>
   <div class="footer-copy">© 2025 Faheed's Strength & Conditioning · Alexandria, Virginia</div>
   <div class="footer-nsca">NSCA · Certified Strength &amp; Conditioning Specialist</div>
 </footer>
