@@ -45,11 +45,51 @@
     opacity: 0.4;
   }
 
+  /* ─── TOP NAV ─── */
+  .top-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .home-link {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .home-link:hover { color: var(--gold-light); }
+
+  .home-link svg {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .home-link:hover svg { transform: translateX(-2px); }
+
   /* ─── HEADER ─── */
   header {
     position: relative;
     text-align: center;
-    padding: 100px 40px 80px;
+    padding: 130px 40px 80px; /* extra top to clear fixed nav */
     border-bottom: 1px solid var(--border);
     overflow: hidden;
   }
@@ -484,7 +524,7 @@
   /* ─── RESPONSIVE ─── */
   @media (max-width: 700px) {
     main { padding: 0 20px 80px; }
-    header { padding: 70px 20px 60px; }
+    header { padding: 110px 20px 60px; }
     .packs { grid-template-columns: 1fr; }
     .trad-body { grid-template-columns: 1fr; }
     .bundle { flex-direction: column; align-items: flex-start; }
@@ -494,8 +534,17 @@
 </head>
 <body>
 
-<header>
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <a href="https://faheed.com" class="home-link">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+    faheed.com
+  </a>
+</nav>
 
+<header>
   <h1>Choose Your <em>Path</em></h1>
   <p class="header-sub">A La Carte &nbsp;·&nbsp; No Contracts &nbsp;·&nbsp; Your Terms</p>
 </header>
