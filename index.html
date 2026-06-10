@@ -40,8 +40,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
-    background: rgba(247,244,239,0.95);
+    background: rgba(247,244,239,0.98);
     backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--parchment);
+    box-shadow: 0 1px 24px rgba(30,26,23,0.07);
   }
 
   .nav-logo {
@@ -234,17 +236,14 @@
 
   .btn-primary:hover { background: var(--soil); }
 
-  /* ─── HERO TITLE — full-width stretch treatment ─── */
-  /*
-     We use a flex row for the title line so "Faheed's" and
-     "Strength & Conditioning" sit on opposite ends of the
-     same baseline, filling the available width.
-  */
-  .hero-title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 100%;
+  /* ─── HERO TITLE — full-width stretch treatment (desktop only) ─── */
+  @media (min-width: 961px) {
+    .hero-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35em;
+      width: 100%;
+    }
   }
 
   /* ─── CTA BANNER ─── */
