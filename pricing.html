@@ -89,7 +89,7 @@
   header {
     position: relative;
     text-align: center;
-    padding: 130px 40px 80px; /* extra top to clear fixed nav */
+    padding: 130px 40px 80px;
     border-bottom: 1px solid var(--border);
     overflow: hidden;
   }
@@ -166,6 +166,8 @@
   .section:nth-child(4) { animation-delay: 1.15s; }
   .section:nth-child(5) { animation-delay: 1.3s; }
   .section:nth-child(6) { animation-delay: 1.45s; }
+  .section:nth-child(7) { animation-delay: 1.6s; }
+  .section:nth-child(8) { animation-delay: 1.75s; }
 
   .section-label {
     display: flex;
@@ -441,6 +443,48 @@
     margin-top: 2px;
   }
 
+  /* ─── ATHLETE DIVIDER ─── */
+  .athlete-divider {
+    margin-top: 80px;
+    border: 1px solid var(--border);
+    background: var(--off-black);
+    padding: 36px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .athlete-divider::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+  }
+
+  .athlete-divider-eyebrow {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .athlete-divider-headline {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .athlete-divider-body {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 680px;
+    line-height: 1.9;
+  }
+
   /* ─── FOOTER ─── */
   footer {
     text-align: center;
@@ -529,6 +573,7 @@
     .trad-body { grid-template-columns: 1fr; }
     .bundle { flex-direction: column; align-items: flex-start; }
     .bundle-price { font-size: 36px; }
+    .athlete-divider { padding: 28px 20px; }
   }
 </style>
 </head>
@@ -550,6 +595,103 @@
 </header>
 
 <main>
+
+  <!-- TRADITIONAL MODEL — lead offering -->
+  <div class="section">
+    <div class="section-label">
+      <span class="section-title">Traditional Hourly Model</span>
+    </div>
+    <div class="trad-wrapper">
+      <div class="trad-header">
+        <div class="trad-headline">All-Inclusive Coaching</div>
+
+      </div>
+      <div class="trad-body">
+        <div class="trad-item free">
+          <div>
+            <div class="trad-item-name">Free 1-Hour Consultation</div>
+            <span class="trad-item-sub">Goals, history & movement screen — before you commit to anything</span>
+          </div>
+          <div class="trad-item-price" style="color: var(--gold-light);">Free</div>
+        </div>
+        <div class="trad-item">
+          <div>
+            <div class="trad-item-name">Hourly Rate</div>
+            <span class="trad-item-sub">All-inclusive per session</span>
+          </div>
+          <div class="trad-item-price">$80<span style="font-size:14px; color: var(--muted);">/hr</span></div>
+        </div>
+        <div class="trad-item">
+          <div>
+            <div class="trad-item-name">5-Hour Pack</div>
+            <span class="trad-item-sub">$75 per hour</span>
+          </div>
+          <div class="trad-item-price">$375</div>
+        </div>
+        <div class="trad-item">
+          <div>
+            <div class="trad-item-name">10-Hour Pack</div>
+            <span class="trad-item-sub">$70 per hour</span>
+          </div>
+          <div class="trad-item-price">$700</div>
+        </div>
+        <div class="trad-item" style="grid-column: 1 / -1;">
+          <div>
+            <div class="trad-item-name">20-Hour Pack</div>
+            <span class="trad-item-sub">$66 per hour &nbsp;·&nbsp; Best rate</span>
+          </div>
+          <div class="trad-item-price">$1,320</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SESSION PACKS -->
+  <div class="section">
+    <div class="section-label">
+      <span class="section-title">Session Packages &nbsp;—&nbsp; Prepaid</span>
+    </div>
+    <div class="packs">
+      <div class="pack">
+        <div class="pack-sessions">5</div>
+        <div class="pack-label">Sessions</div>
+        <div class="pack-total">$440</div>
+        <div class="pack-per">$88 per session</div>
+        <div class="pack-tag">Starter</div>
+      </div>
+      <div class="pack">
+        <div class="pack-sessions">10</div>
+        <div class="pack-label">Sessions</div>
+        <div class="pack-total">$825</div>
+        <div class="pack-per">$82.50 per session</div>
+        <div class="pack-tag">Most Popular</div>
+      </div>
+      <div class="pack">
+        <div class="pack-sessions">20</div>
+        <div class="pack-label">Sessions</div>
+        <div class="pack-total">$1,540</div>
+        <div class="pack-per">$77 per session</div>
+        <div class="pack-tag">Best Rate</div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-icon">◆</div>
+      <div class="callout-text"><strong>Sessions never expire.</strong> Use them on your schedule, not ours. No billing dates, no auto-renewals, no pressure.</div>
+    </div>
+  </div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-diamond"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ATHLETE CALLOUT -->
+  <div class="athlete-divider">
+    <div class="athlete-divider-eyebrow">For Athletes</div>
+    <div class="athlete-divider-headline">Specialized Sport-Specific Services</div>
+    <p class="athlete-divider-body">The offerings below are designed for athletes with specific performance demands — competitive, recreational, or sport-transitioning. They involve discrete fitness testing and individualized program design across distinct physical qualities. If that level of specificity isn't what you're after, the hourly model above covers everything you need.</p>
+  </div>
 
   <!-- ASSESSMENTS -->
   <div class="section">
@@ -730,117 +872,6 @@
       <div>
         <div class="bundle-price">$740</div>
         <div class="bundle-savings">Saves ~$90</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TRAINING SESSIONS -->
-  <div class="section">
-    <div class="section-label">
-      <span class="section-title">Training Sessions</span>
-    </div>
-    <div class="grid">
-      <div class="item">
-        <span class="item-name">Single In-Person Session</span>
-        <span class="item-price">$95</span>
-      </div>
-      <div class="item">
-        <span class="item-name">Single Virtual / Check-In</span>
-        <span class="item-price">$45</span>
-      </div>
-      <div class="item">
-        <span class="item-name">Check-In Only</span>
-        <span class="item-price">$25</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- SESSION PACKS -->
-  <div class="section">
-    <div class="section-label">
-      <span class="section-title">Session Packages &nbsp;—&nbsp; Prepaid</span>
-    </div>
-    <div class="packs">
-      <div class="pack">
-        <div class="pack-sessions">5</div>
-        <div class="pack-label">Sessions</div>
-        <div class="pack-total">$440</div>
-        <div class="pack-per">$88 per session</div>
-        <div class="pack-tag">Starter</div>
-      </div>
-      <div class="pack">
-        <div class="pack-sessions">10</div>
-        <div class="pack-label">Sessions</div>
-        <div class="pack-total">$825</div>
-        <div class="pack-per">$82.50 per session</div>
-        <div class="pack-tag">Most Popular</div>
-      </div>
-      <div class="pack">
-        <div class="pack-sessions">20</div>
-        <div class="pack-label">Sessions</div>
-        <div class="pack-total">$1,540</div>
-        <div class="pack-per">$77 per session</div>
-        <div class="pack-tag">Best Rate</div>
-      </div>
-    </div>
-    <div class="callout">
-      <div class="callout-icon">◆</div>
-      <div class="callout-text"><strong>Sessions never expire.</strong> Use them on your schedule, not ours. No billing dates, no auto-renewals, no pressure.</div>
-    </div>
-  </div>
-
-  <div class="divider">
-    <div class="divider-line"></div>
-    <div class="divider-diamond"></div>
-    <div class="divider-line"></div>
-  </div>
-
-  <!-- TRADITIONAL MODEL -->
-  <div class="section">
-    <div class="section-label">
-      <span class="section-title">Traditional Hourly Model</span>
-    </div>
-    <div class="trad-wrapper">
-      <div class="trad-header">
-        <div class="trad-headline">All-Inclusive Coaching</div>
-        <p class="trad-desc">Prefer simplicity? Everything — assessment, programming, and training — is handled within your sessions at one flat rate. No decisions, no itemizing. Just show up and do the work.</p>
-      </div>
-      <div class="trad-body">
-        <div class="trad-item free">
-          <div>
-            <div class="trad-item-name">Free 1-Hour Consultation</div>
-            <span class="trad-item-sub">Goals, history & movement screen — before you commit to anything</span>
-          </div>
-          <div class="trad-item-price" style="color: var(--gold-light);">Free</div>
-        </div>
-        <div class="trad-item">
-          <div>
-            <div class="trad-item-name">Hourly Rate</div>
-            <span class="trad-item-sub">All-inclusive per session</span>
-          </div>
-          <div class="trad-item-price">$80<span style="font-size:14px; color: var(--muted);">/hr</span></div>
-        </div>
-        <div class="trad-item">
-          <div>
-            <div class="trad-item-name">5-Hour Pack</div>
-            <span class="trad-item-sub">$75 per hour</span>
-          </div>
-          <div class="trad-item-price">$375</div>
-        </div>
-        <div class="trad-item">
-          <div>
-            <div class="trad-item-name">10-Hour Pack</div>
-            <span class="trad-item-sub">$70 per hour</span>
-          </div>
-          <div class="trad-item-price">$700</div>
-        </div>
-        <div class="trad-item" style="grid-column: 1 / -1;">
-          <div>
-            <div class="trad-item-name">20-Hour Pack</div>
-            <span class="trad-item-sub">$66 per hour &nbsp;·&nbsp; Best rate</span>
-          </div>
-          <div class="trad-item-price">$1,320</div>
-        </div>
       </div>
     </div>
   </div>
