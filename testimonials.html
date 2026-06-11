@@ -1,1 +1,519 @@
-Coming soon 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials — Faheed's Strength & Conditioning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg:          #1a1714;
+      --bg-card:     #201d1a;
+      --bg-card-alt: #242019;
+      --border:      rgba(255,255,255,0.07);
+      --gold:        #b89a6a;
+      --gold-light:  #d4b88a;
+      --cream:       #e8dfd0;
+      --muted:       rgba(232,223,208,0.45);
+      --faint:       rgba(232,223,208,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 0 2.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(26,23,20,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--cream); }
+
+    /* ── HEADER ── */
+    header {
+      padding: 8rem 2.5rem 2.5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.1rem;
+    }
+
+    .eyebrow--large {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    header p {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .header-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin: 2rem auto 0;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem 6rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--bg-card);
+      padding: 2.5rem 2.5rem 2.2rem;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: border-color 0.25s;
+    }
+
+    .card:nth-child(even) {
+      background: var(--bg-card-alt);
+    }
+
+    .card:hover {
+      border-color: rgba(184,154,106,0.25);
+    }
+
+    .card-accent {
+      position: absolute;
+      top: 0;
+      left: 2.5rem;
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.25;
+      margin-bottom: -1rem;
+      display: block;
+      user-select: none;
+    }
+
+    .card blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.18rem;
+      line-height: 1.65;
+      color: var(--cream);
+      font-style: italic;
+      margin-bottom: 1.8rem;
+    }
+
+    .client-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--faint);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .client-info {
+      flex: 1;
+    }
+
+    .client-name {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream);
+      display: block;
+      margin-bottom: 0.18rem;
+    }
+
+    .client-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .stars {
+      margin-left: auto;
+      display: flex;
+      gap: 2px;
+    }
+
+    .star {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      opacity: 0.55;
+      clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+    }
+
+    /* ── FEATURED (LARGE) CARD ── */
+    .card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 3.5rem;
+    }
+
+    .card.featured blockquote {
+      font-size: 1.42rem;
+      line-height: 1.6;
+    }
+
+    .card.featured .card-visual {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid var(--border);
+      padding-left: 3rem;
+      gap: 1.4rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .stat-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── CTA ── */
+    .cta-band {
+      border-top: 1px solid var(--border);
+      padding: 4.5rem 2.5rem;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-band p {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 0.85rem 2.4rem;
+      border: 1px solid var(--gold);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      nav { padding: 0 1.4rem; }
+
+      header { padding: 7.5rem 1.4rem 2.5rem; }
+
+      .grid { padding: 1.5rem 1.4rem 4rem; gap: 1px; }
+
+      .card { padding: 2rem 1.6rem 1.8rem; }
+
+      .card.featured {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.2rem 1.6rem;
+      }
+
+      .card.featured .card-visual {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 2rem;
+      }
+
+      .cta-band { padding: 3.5rem 1.4rem; }
+    }
+
+    /* ── CONSTRUCTION BANNER ── */
+    .banner-construction {
+      background: repeating-linear-gradient(
+        -45deg,
+        #b89a6a,
+        #b89a6a 10px,
+        #1a1714 10px,
+        #1a1714 20px
+      );
+      padding: 0.75rem 2.5rem;
+      text-align: center;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+
+    .banner-construction span {
+      display: inline-block;
+      background: #1a1714;
+      padding: 0.3rem 1.4rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Faheed's Strength & Conditioning</a>
+    <a class="nav-back" href="index.html">← Back to Home</a>
+  </nav>
+
+  <!-- UNDER CONSTRUCTION BANNER -->
+  <div class="banner-construction">
+    <span>⚠ &nbsp; This page is currently under construction &nbsp; ⚠</span>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <p class="eyebrow eyebrow--large">Client Results</p>
+    <div class="header-rule"></div>
+  </header>
+
+  <!-- TESTIMONIAL GRID -->
+  <section class="grid">
+
+    <!-- FEATURED CARD -->
+    <div class="card featured">
+      <div class="card-accent"></div>
+      <div>
+        <span class="quote-mark">"</span>
+        <blockquote>
+          TBD
+        </blockquote>
+        <div class="client-meta">
+          <div class="avatar">C1</div>
+          <div class="client-info">
+            <span class="client-name">Client 1</span>
+            <span class="client-label">Strength &amp; Body Composition</span>
+          </div>
+          <div class="stars">
+            <div class="star"></div><div class="star"></div><div class="star"></div>
+            <div class="star"></div><div class="star"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-visual">
+        <div class="stat">
+          <span class="stat-value">—</span>
+          <span class="stat-label">Duration with Faheed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">—</span>
+          <span class="stat-label">Large Milestones Accomplished</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">—</span>
+          <span class="stat-label">Training Focus</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card featured">
+      <div class="card-accent"></div>
+      <div>
+        <span class="quote-mark">"</span>
+        <blockquote>
+          TBD
+        </blockquote>
+        <div class="client-meta">
+          <div class="avatar">C2</div>
+          <div class="client-info">
+            <span class="client-name">Client 2</span>
+            <span class="client-label">In Progress</span>
+          </div>
+          <div class="stars">
+            <div class="star"></div><div class="star"></div><div class="star"></div>
+            <div class="star"></div><div class="star"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-visual">
+        <div class="stat">
+          <span class="stat-value">—</span>
+          <span class="stat-label">Duration with Faheed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">—</span>
+          <span class="stat-label">Large Milestones Accomplished</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">—</span>
+          <span class="stat-label">Training Focus</span>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <h2>Ready to achieve your athletic goals?</h2>
+    <p>Individualized programming. No templates. No shortcuts.</p>
+    <a class="btn" href="index.html#contact">Start the Conversation</a>
+  </div>
+
+</body>
+</html>
