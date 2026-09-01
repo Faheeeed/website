@@ -1,0 +1,30 @@
+name: Daily Site Review
+
+on:
+  schedule:
+    # Runs at 12:00 UTC daily (~8am Eastern during EDT, ~7am during EST)
+    - cron: '0 12 * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab any time
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run site review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node scripts/daily-site-review.js
